@@ -1,0 +1,31 @@
+#
+# JDBC Properties
+#
+
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost:1433;databaseName=demodb1
+    username: sa
+    password: Sqlserver2020
+  jpa:
+    database: sql_server
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServer2012Dialect
+
+app:
+  write:
+    enabled: false
+
+feature-management:
+  feature-set:
+    feature-a: true
+    feature-b: false
+
+  #spring.hibernate.globally_quoted_identifiers = true
+  #spring.hibernate.globally_quoted_identifiers_skip_column_definitions = true
