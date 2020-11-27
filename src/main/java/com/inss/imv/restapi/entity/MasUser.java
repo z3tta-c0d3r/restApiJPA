@@ -4,7 +4,6 @@ import java.util.Date;
 
 import javax.persistence.*;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
@@ -26,10 +25,10 @@ public class MasUser {
     private String password;
 
     @Column
-    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 
     @Column
-    @UpdateTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt;
 }
