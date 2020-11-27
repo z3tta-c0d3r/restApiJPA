@@ -17,8 +17,8 @@ public class DateToTimestamp {
     @ParseDate
     public java.util.Date parseDate(Date date) {
         try {
-            final Date parse = DATE_FORMAT.parse(String.valueOf(date));
-            return parse;
+            String value = DATE_FORMAT.format(date);
+            return DATE_FORMAT.parse(value);
         } catch (ParseException e) {
             throw new IllegalArgumentException(e);
         }
